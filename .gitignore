@@ -1,0 +1,12 @@
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug*/
+[Rr]elease*/
+build/
+*.user
+*.userprefs
+*.suo
+*.ncb
+*.sdf
+*.opendb
