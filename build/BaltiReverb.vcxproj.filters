@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\mypluginprocessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\myplugincontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\mypluginentry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\OooO\Documents\Wooster\CS200\VST_SDK\vst3sdk\public.sdk\source\main\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\myplugincids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\mypluginprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\source\myplugincontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="params.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\resource\myplugineditor.uidesc" />
+    <CustomBuild Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\resource\F31F083C088B5952A2FDF85BD525B3B5_snapshot.png">
+      <Filter>Resources</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\resource\F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png">
+      <Filter>Resources</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\resource\win32resource.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D539739F-E4C4-39C6-8013-15667BC5830C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{EC2FFADC-ECFA-3029-A3E8-C4025460C96C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{85EA7BF8-D412-37BC-9105-75326295679A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

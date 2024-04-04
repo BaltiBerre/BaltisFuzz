@@ -1,0 +1,46 @@
+^C:\USERS\OOOO\DOCUMENTS\WOOSTER\CS200\PROJECT\BALTIREVERB\RESOURCE\MYPLUGINEDITOR.UIDESC
+setlocal
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E copy_if_different C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/myplugineditor.uidesc C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/myplugineditor.uidesc to C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\OOOO\DOCUMENTS\WOOSTER\CS200\PROJECT\BALTIREVERB\RESOURCE\F31F083C088B5952A2FDF85BD525B3B5_SNAPSHOT.PNG
+setlocal
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E copy_if_different C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/F31F083C088B5952A2FDF85BD525B3B5_snapshot.png C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot.png
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/F31F083C088B5952A2FDF85BD525B3B5_snapshot.png to C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot.png"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\OOOO\DOCUMENTS\WOOSTER\CS200\PROJECT\BALTIREVERB\RESOURCE\F31F083C088B5952A2FDF85BD525B3B5_SNAPSHOT_2.0X.PNG
+setlocal
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E copy_if_different C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png to C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\OOOO\DOCUMENTS\WOOSTER\CS200\PROJECT\BALTIREVERB\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\cmake-3.29.0-rc2-windows-x86_64\bin\cmake.exe" -SC:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb -BC:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build --check-stamp-file C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,51 @@
+{
+  "Name": "BaltiReverb",
+  "Version": "1.0.0.0",
+  "Factory Info": {
+    "Vendor": "Baltisreverb",
+    "URL": "baltisreverb",
+    "E-Mail": "mailto:baltisreverb",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "F31F083C088B5952A2FDF85BD525B3B5",
+      "Category": "Audio Module Class",
+      "Name": "BaltiReverb",
+      "Vendor": "Baltisreverb",
+      "Version": "1.0.0.0",
+      "SDKVersion": "VST 3.7.10",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+        {
+          "Scale Factor": 1,
+          "Path": "Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot.png",
+        },
+        {
+          "Scale Factor": 2,
+          "Path": "Contents/Resources/Snapshots/F31F083C088B5952A2FDF85BD525B3B5_snapshot_2.0x.png",
+        },
+      ],
+    },
+    {
+      "CID": "8F0BFA20FE885824AC416769FDB73953",
+      "Category": "Component Controller Class",
+      "Name": "BaltiReverbController",
+      "Vendor": "Baltisreverb",
+      "Version": "1.0.0.0",
+      "SDKVersion": "VST 3.7.10",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

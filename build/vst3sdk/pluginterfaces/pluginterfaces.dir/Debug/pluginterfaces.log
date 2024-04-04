@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/OooO/Documents/Wooster/CS200/VST_SDK/vst3sdk/pluginterfaces/CMakeLists.txt
+  conststringtable.cpp
+  coreiids.cpp
+  funknown.cpp
+  ustring.cpp
+  pluginterfaces.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\pluginterfaces.lib

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\bin\Debug\moduleinfotool.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\bin\Debug\validator.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\VST3\Debug\BaltiReverb.vst3\Contents\x86_64-win\BaltiReverb.vst3</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
