@@ -8,7 +8,10 @@
 #include "base/source/fstreamer.h"
 #include "pluginterfaces/vst/ivstparameterchanges.h"
 
+
+
 using namespace Steinberg;
+using namespace std;
 const float kBitDepthGainTable[] = {
     0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f
 };
@@ -188,11 +191,53 @@ tresult PLUGIN_API BaltiReverbProcessor::canProcessSampleSize (int32 symbolicSam
 	return kResultFalse;
 }
 
+
+
+
 //------------------------------------------------------------------------
 tresult PLUGIN_API BaltiReverbProcessor::setState (IBStream* state)
 {
 	// called when we load a preset, the model has to be reloaded
 	IBStreamer streamer (state, kLittleEndian);
+    if (!state)
+        return kResultFalse;
+
+    float savedFuzz = 0.0f;
+    if (streamer.readFloat(savedFuzz) == false)
+        return kResultFalse;
+    fFuzz = savedFuzz;
+
+    float savedDrive = 0.0f;
+    if (streamer.readFloat(savedDrive) == false)
+        return kResultFalse;
+    fDrive = savedDrive;
+
+    float savedOutput = 0.0f;
+    if (streamer.readFloat(savedOutput) == false)
+        return kResultFalse;
+    fOutput = savedOutput;
+
+    float savedMix = 0.0f;
+    if (streamer.readFloat(savedMix) == false)
+        return kResultFalse;
+    fMix = savedMix;
+
+    float savedTone = 0.0f;
+    if (streamer.readFloat(savedTone) == false)
+        return kResultFalse;
+    fTone = savedTone;
+
+    float savedBitDepth = 0.0f;
+    if (streamer.readFloat(savedBitDepth) == false)
+        return kResultFalse;
+    fBitDepth = savedBitDepth;
+
+    float savedSampleRate = 0.0f;
+    if (streamer.readFloat(savedSampleRate) == false)
+        return kResultFalse;
+
+    fSampleRate = savedSampleRate;
+
 	
 	return kResultOk;
 }
@@ -200,8 +245,17 @@ tresult PLUGIN_API BaltiReverbProcessor::setState (IBStream* state)
 //------------------------------------------------------------------------
 tresult PLUGIN_API BaltiReverbProcessor::getState (IBStream* state)
 {
-	// here we need to save the model
-	IBStreamer streamer (state, kLittleEndian);
+
+    // Save the model of your plug-in
+    IBStreamer streamer(state, kLittleEndian);
+    streamer.writeFloat(fFuzz);
+    streamer.writeFloat(fDrive);
+    streamer.writeFloat(fOutput);
+    streamer.writeFloat(fMix);
+    streamer.writeFloat(fTone);
+    streamer.writeFloat(fBitDepth);
+    streamer.writeFloat(fSampleRate);
+
 
 	return kResultOk;
 }

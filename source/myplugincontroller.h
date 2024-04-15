@@ -5,6 +5,11 @@
 #pragma once
 
 #include "public.sdk/source/vst/vsteditcontroller.h"
+namespace Steinberg {
+	class IBStream;
+	class IBStreamer;
+}
+
 
 namespace MyCompanyName {
 
@@ -23,6 +28,8 @@ public:
 	{
 		return (Steinberg::Vst::IEditController*)new BaltiReverbController;
 	}
+
+
 
 	//--- from IPluginBase -----------------------------------------------
 	Steinberg::tresult PLUGIN_API initialize (Steinberg::FUnknown* context) SMTG_OVERRIDE;

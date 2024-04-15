@@ -6,6 +6,10 @@
 #include "myplugincids.h"
 #include "params.h"
 #include "vstgui/plugin-bindings/vst3editor.h"
+#include "pluginterfaces/base/ibstream.h"
+#include "pluginterfaces/base/ustring.h"
+
+using Steinberg::IBStreamer;
 
 using namespace Steinberg;
 
@@ -58,11 +62,45 @@ tresult PLUGIN_API BaltiReverbController::terminate ()
 }
 
 //------------------------------------------------------------------------
-tresult PLUGIN_API BaltiReverbController::setComponentState (IBStream* state)
+tresult PLUGIN_API BaltiReverbController::setComponentState(IBStream* state)
 {
-	// Here you get the state of the component (Processor part)
 	if (!state)
 		return kResultFalse;
+
+	float savedFuzz = 0.0f;
+	if (state->read(&savedFuzz, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kFuzzId, savedFuzz);
+
+	float savedDrive = 0.0f;
+	if (state->read(&savedDrive, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kDriveId, savedDrive);
+
+	float savedOutput = 0.0f;
+	if (state->read(&savedOutput, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kOutputId, savedOutput);
+
+	float savedMix = 0.0f;
+	if (state->read(&savedMix, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kMixId, savedMix);
+
+	float savedTone = 0.0f;
+	if (state->read(&savedTone, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kToneId, savedTone);
+
+	float savedBitDepth = 0.0f;
+	if (state->read(&savedBitDepth, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kBitDepthId, savedBitDepth);
+
+	float savedSampleRate = 0.0f;
+	if (state->read(&savedSampleRate, sizeof(float)) != kResultOk)
+		return kResultFalse;
+	setParamNormalized(kSampleRateId, savedSampleRate);
 
 	return kResultOk;
 }
