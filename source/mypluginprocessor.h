@@ -59,6 +59,7 @@ protected:
 	float fSampleRate = 1.0f;
 	double sampleRate = 0.0;
 	float fGlitch = 0.0f;
+	float calculateLimiterThreshold(float bitDepth);
 };
 
 //------------------------------------------------------------------------

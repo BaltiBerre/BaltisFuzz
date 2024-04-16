@@ -3,16 +3,16 @@
 		"version": "1",
 		"bitmaps": {
 			"handlemarker": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\handlemarker.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resource\\handlemarker.png"
 			},
 			"knob4": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\knob4.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resource\\knob4.png"
 			},
 			"officialknob1": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\officialknob1.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resource\\officialknob1.png"
 			},
 			"vstbackground": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\vstbackground.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resource\\vstbackground.png"
 			}
 		},
 		"fonts": {},
@@ -41,13 +41,13 @@
 			},
 			"UIEditController": {
 				"EditViewScale": "1",
-				"EditorSize": "0, 0, 1477, 833",
-				"SplitViewSize_0_0": "0.8389095415117719944930740894051268696785",
-				"SplitViewSize_0_1": "0.1363073110285006328545875931013142690063",
-				"SplitViewSize_1_0": "0.4869888475836431362964162872231099754572",
-				"SplitViewSize_1_1": "0.5068153655514250344182869412179570645094",
-				"SplitViewSize_2_0": "0.8165199729180772081349459767807275056839",
-				"SplitViewSize_2_1": "0.1800947867298578197736702577458345331252",
+				"EditorSize": "0, 0, 1039, 660",
+				"SplitViewSize_0_0": "0.7949526813880126718814267405832652002573",
+				"SplitViewSize_0_1": "0.1735015772870662498217342317730071954429",
+				"SplitViewSize_1_0": "0.4834384858044163957302430389972869306803",
+				"SplitViewSize_1_1": "0.5086750788643532583677142611122690141201",
+				"SplitViewSize_2_0": "0.7391722810394609766149187635164707899094",
+				"SplitViewSize_2_1": "0.2560153994225216611546613876271294429898",
 				"TabSwitchValue": "4",
 				"Version": "1"
 			},

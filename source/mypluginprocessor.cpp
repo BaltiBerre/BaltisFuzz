@@ -18,6 +18,11 @@ const float kBitDepthGainTable[] = {
 const int kBitDepthGainTableSize = sizeof(kBitDepthGainTable) / sizeof(float);
 
 namespace MyCompanyName {
+
+    float BaltiReverbProcessor::calculateLimiterThreshold(float bitDepth) {
+        return 0.1f + bitDepth * 0.9f;
+    }
+
 //------------------------------------------------------------------------
 // BaltiFuzzProcessor
 //------------------------------------------------------------------------
@@ -131,8 +136,8 @@ tresult PLUGIN_API BaltiReverbProcessor::process(Vst::ProcessData& data)
         Vst::Sample32 tmp;
 
         for (int32 i = 0; i < data.numSamples; i++) {
-            tmp = *pIn * fDrive;
-            tmp = tmp + tmp * 20.0 * fFuzz;
+            tmp = *pIn * (1.0f + fDrive * 10.0f);
+            tmp = tanh(tmp * (1.0f + fFuzz * 5.0f));
 
             // Apply soft clipping with adjusted threshold and clipping curve
             float threshold = 0.7;
@@ -143,21 +148,26 @@ tresult PLUGIN_API BaltiReverbProcessor::process(Vst::ProcessData& data)
                 tmp = -threshold + (1.0 - threshold) * tanh((tmp + threshold) / (1.0 - threshold));
             }
 
-            *pOut = ((*pIn * (1.0f - fMix)) + (tmp * fMix) * fOutput);
-
             // Apply bitcrusher effect
             float bitDepth = pow(2.0f, fBitDepth * 16.0f);
-            *pOut = floor(*pOut * bitDepth) / bitDepth;
+            float limiterThreshold = calculateLimiterThreshold(fBitDepth);
+            float crushedSample = floor(tmp * bitDepth) / bitDepth;
 
-            float fuzzGainCompensation = 1.0f / sqrt(1.0f + fFuzz * 10.0f);
-            *pOut = *pOut * fuzzGainCompensation;
+            // Apply limiter
+            if (crushedSample > limiterThreshold) {
+                crushedSample = limiterThreshold + (crushedSample - limiterThreshold) / (bitDepth - limiterThreshold + 1.0f);
+            }
+            else if (crushedSample < -limiterThreshold) {
+                crushedSample = -limiterThreshold + (crushedSample + limiterThreshold) / (bitDepth - limiterThreshold + 1.0f);
+            }
+
+            *pOut = ((*pIn * (1.0f - fMix)) + (crushedSample * fMix) * fOutput);
 
             float outputGain = 1.5f; // Adjust this value to control the overall output gain
             *pOut = *pOut * outputGain;
 
-
             pIn++;
-            pOut++;
+            pOut++;            
         }
     }
 

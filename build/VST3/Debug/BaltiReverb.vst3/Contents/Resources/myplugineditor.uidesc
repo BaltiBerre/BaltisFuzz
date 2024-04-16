@@ -3,16 +3,16 @@
 		"version": "1",
 		"bitmaps": {
 			"handlemarker": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\handlemarker.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resourcevst\\handlemarker.png"
 			},
 			"knob4": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\knob4.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resourcevst\\knob4.png"
 			},
 			"officialknob1": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\officialknob1.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resourcevst\\officialknob1.png"
 			},
 			"vstbackground": {
-				"path": "C:\\Users\\OooO\\Pictures\\Images\\images_vst\\vstbackground.png"
+				"path": "C:\\Users\\OooO\\Documents\\Wooster\\CS200\\Project\\BaltiReverb\\resourcevst\\background.png"
 			}
 		},
 		"fonts": {},
