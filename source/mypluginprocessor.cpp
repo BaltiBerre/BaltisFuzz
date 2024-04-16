@@ -1,4 +1,4 @@
-//mypluginprocessor.cpp
+//mypluginprocessor.cpp Version B
 // Copyright(c) 2024 BaltisFuzz.
 //------------------------------------------------------------------------
 
