@@ -1,6 +1,6 @@
-# BaltiReverb VST3 Plugin
+# BaltiFuzz VST3 Plugin
 
-BaltiReverb is a VST3 audio effect plugin that combines distortion, bitcrushing, and mixing effects to create unique and gritty sounds. It offers a range of parameters to shape the sound, including fuzz, drive, output gain, mix, tone, bit depth, and sample rate.
+BaltiFuzz is a VST3 audio effect plugin that combines distortion, bitcrushing, and mixing effects to create unique and gritty sounds. It offers a range of parameters to shape the sound, including fuzz, drive, output gain, mix, tone, bit depth, and sample rate.
 
 ## Features
 
