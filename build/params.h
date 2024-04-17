@@ -5,7 +5,6 @@ enum {
 	kDriveId = 1,
 	kOutputId = 2,
 	kMixId = 3,
-	kToneId = 4,
 	kBitDepthId = 5,
 	kGlitchId = 8,
 	kClipThresholdId = 9,

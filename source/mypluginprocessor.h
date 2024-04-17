@@ -54,7 +54,6 @@ namespace MyCompanyName {
 		float fDrive = 0.5f;
 		float fOutput = 0.5f;
 		float fMix = 1.0f;
-		float fTone = 1.0f;
 		float fBitDepth = 1.0f;
 
 		double sampleRate = 0.0;

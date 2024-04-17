@@ -111,9 +111,6 @@ namespace MyCompanyName {
                         case kBitDepthId:
                             fBitDepth = (float)value;
                             break;
-                        case kToneId:
-                            fTone = (float)value;
-                            break;
                         }
                     }
                 }
@@ -167,22 +164,9 @@ namespace MyCompanyName {
                     crushedSample = -limiterThreshold + (crushedSample + limiterThreshold) / (bitDepth - limiterThreshold + 1.0f);
                 }
 
-                *pOut = ((*pIn * (1.0f - fMix)) + (crushedSample * fMix) * fOutput);
-
-                // Apply low-pass filter
-                float cutoff = fTone * 0.5f;
-                float omega = 2.0f * M_PI * cutoff / sampleRate;
-                float alpha = 1.0f / (1.0f + omega);
-                b0 = alpha;
-                b1 = alpha;
-                a1 = (1.0f - omega) * alpha;
-
-                float x0 = *pOut;
-                float y0 = b0 * x0 + b1 * x1 - a1 * y1;
-                x1 = x0;
-                y1 = y0;
-
-                tmp = y0 * fGain;
+                
+                tmp = ((*pIn * (1.0f - fMix)) + (crushedSample * fMix) * fOutput);
+                tmp *= fGain;
                 *pOut = tmp;
 
                 pIn++;
@@ -276,7 +260,7 @@ namespace MyCompanyName {
         streamer.writeFloat(fDrive);
         streamer.writeFloat(fOutput);
         streamer.writeFloat(fMix);
-        streamer.writeFloat(fTone);
+  
         streamer.writeFloat(fBitDepth);
         streamer.writeFloat(fGain);
 

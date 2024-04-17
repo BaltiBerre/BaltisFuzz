@@ -43,7 +43,6 @@ tresult PLUGIN_API BaltiReverbController::initialize (FUnknown* context)
 	parameters.addParameter(STR16("Drive"), nullptr, 0, 0.5, Vst::ParameterInfo::kCanAutomate, kDriveId);
 	parameters.addParameter(STR16("Output"), nullptr, 0, 0.5, Vst::ParameterInfo::kCanAutomate, kOutputId);
 	parameters.addParameter(STR16("Mix"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kMixId);
-	parameters.addParameter(STR16("Tone"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kToneId);
 	parameters.addParameter(STR16("BitDepth"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kBitDepthId);
 	parameters.addParameter(STR16("Gain"), nullptr, 0, 0.5, Vst::ParameterInfo::kCanAutomate, kOutputGainId);
 	
@@ -86,20 +85,10 @@ tresult PLUGIN_API BaltiReverbController::setComponentState(IBStream* state)
 		return kResultFalse;
 	setParamNormalized(kMixId, savedMix);
 
-	float savedTone = 0.0f;
-	if (state->read(&savedTone, sizeof(float)) != kResultOk)
-		return kResultFalse;
-	setParamNormalized(kToneId, savedTone);
-
 	float savedBitDepth = 0.0f;
 	if (state->read(&savedBitDepth, sizeof(float)) != kResultOk)
 		return kResultFalse;
 	setParamNormalized(kBitDepthId, savedBitDepth);
-
-	float savedSampleRate = 0.0f;
-	if (state->read(&savedSampleRate, sizeof(float)) != kResultOk)
-		return kResultFalse;
-	setParamNormalized(kSampleRateId, savedSampleRate);
 
 	float savedGain = 0.0f;
 	if (state->read(&savedGain, sizeof(float)) != kResultOk)
