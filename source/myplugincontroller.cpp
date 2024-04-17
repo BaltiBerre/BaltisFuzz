@@ -45,7 +45,6 @@ tresult PLUGIN_API BaltiReverbController::initialize (FUnknown* context)
 	parameters.addParameter(STR16("Mix"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kMixId);
 	parameters.addParameter(STR16("Tone"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kToneId);
 	parameters.addParameter(STR16("BitDepth"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kBitDepthId);
-	parameters.addParameter(STR16("SampleRate"), nullptr, 0, 1, Vst::ParameterInfo::kCanAutomate, kSampleRateId);
 	parameters.addParameter(STR16("Gain"), nullptr, 0, 0.5, Vst::ParameterInfo::kCanAutomate, kOutputGainId);
 	
 

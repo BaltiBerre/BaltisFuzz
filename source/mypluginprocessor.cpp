@@ -111,9 +111,6 @@ namespace MyCompanyName {
                         case kBitDepthId:
                             fBitDepth = (float)value;
                             break;
-                        case kSampleRateId:
-                            fSampleRate = (float)value;
-                            break;
                         case kToneId:
                             fTone = (float)value;
                             break;
@@ -184,8 +181,6 @@ namespace MyCompanyName {
                 float y0 = b0 * x0 + b1 * x1 - a1 * y1;
                 x1 = x0;
                 y1 = y0;
-
-                *pOut = y0;
 
                 tmp = y0 * fGain;
                 *pOut = tmp;
@@ -266,11 +261,6 @@ namespace MyCompanyName {
             return kResultFalse;
         fBitDepth = savedBitDepth;
 
-        float savedSampleRate = 0.0f;
-        if (streamer.readFloat(savedSampleRate) == false)
-            return kResultFalse;
-
-        fSampleRate = savedSampleRate;
 
 
         return kResultOk;
@@ -288,7 +278,6 @@ namespace MyCompanyName {
         streamer.writeFloat(fMix);
         streamer.writeFloat(fTone);
         streamer.writeFloat(fBitDepth);
-        streamer.writeFloat(fSampleRate);
         streamer.writeFloat(fGain);
 
 

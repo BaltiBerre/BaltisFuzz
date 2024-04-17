@@ -56,7 +56,7 @@ namespace MyCompanyName {
 		float fMix = 1.0f;
 		float fTone = 1.0f;
 		float fBitDepth = 1.0f;
-		float fSampleRate = 1.0f;
+
 		double sampleRate = 0.0;
 		float fGain = 0.0f;
 		float fClipThreshold = 0.7f;

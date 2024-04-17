@@ -1,6 +1,8 @@
-﻿  Generating VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc
-  [SMTG] Copied C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/myplugineditor.uidesc to C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc
+﻿  myplugincontroller.cpp
+  mypluginprocessor.cpp
   BaltiReverb.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\VST3\Debug\BaltiReverb.vst3\Contents\x86_64-win\BaltiReverb.vst3
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
   [SMTG] Copy PlugIn.ico and desktop.ini and change their attributes.			
   [SMTG] Validator started...
   * Loading module...
