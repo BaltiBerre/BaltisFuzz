@@ -1,9 +1,6 @@
 ﻿  Generating VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc
   [SMTG] Copied C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/resource/myplugineditor.uidesc to C:/Users/OooO/Documents/Wooster/CS200/Project/BaltiReverb/build/VST3/Debug/BaltiReverb.vst3/Contents/Resources/myplugineditor.uidesc
-  mypluginprocessor.cpp
   BaltiReverb.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\VST3\Debug\BaltiReverb.vst3\Contents\x86_64-win\BaltiReverb.vst3
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
   [SMTG] Copy PlugIn.ico and desktop.ini and change their attributes.			
   [SMTG] Validator started...
   * Loading module...
@@ -73,10 +70,10 @@
   Info:     Parameter 001 (id=1): [title="Drive"] [unit=""] [type = F, default = 0.500000, unit = 0]
   Info:     Parameter 002 (id=2): [title="Output"] [unit=""] [type = F, default = 0.500000, unit = 0]
   Info:     Parameter 003 (id=3): [title="Mix"] [unit=""] [type = F, default = 1.000000, unit = 0]
-  Info:     Parameter 004 (id=4): [title="Tone"] [unit=""] [type = F, default = 0.500000, unit = 0]
+  Info:     Parameter 004 (id=4): [title="Tone"] [unit=""] [type = F, default = 1.000000, unit = 0]
   Info:     Parameter 005 (id=5): [title="BitDepth"] [unit=""] [type = F, default = 1.000000, unit = 0]
   Info:     Parameter 006 (id=6): [title="SampleRate"] [unit=""] [type = F, default = 1.000000, unit = 0]
-  Info:     Parameter 007 (id=8): [title="Glitch"] [unit=""] [type = F, default = 0.000000, unit = 0]
+  Info:     Parameter 007 (id=11): [title="Gain"] [unit=""] [type = F, default = 0.500000, unit = 0]
 Info : warning : No bypass parameter found. Is this intended ?
   [Succeeded]
   

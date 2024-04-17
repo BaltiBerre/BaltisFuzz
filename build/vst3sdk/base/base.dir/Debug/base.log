@@ -1,13 +1,1 @@
-﻿  Building Custom Rule C:/Users/OooO/Documents/Wooster/CS200/VST_SDK/vst3sdk/base/CMakeLists.txt
-  baseiids.cpp
-  fbuffer.cpp
-  fdebug.cpp
-  fdynlib.cpp
-  fobject.cpp
-  fstreamer.cpp
-  fstring.cpp
-  timer.cpp
-  updatehandler.cpp
-  fcondition.cpp
-  flock.cpp
-  base.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\base.lib
+﻿  base.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\base.lib

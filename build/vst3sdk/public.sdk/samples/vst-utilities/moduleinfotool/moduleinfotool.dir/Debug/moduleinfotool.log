@@ -1,8 +1,1 @@
-﻿  Building Custom Rule C:/Users/OooO/Documents/Wooster/CS200/VST_SDK/vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool/CMakeLists.txt
-  main.cpp
-  moduleinfocreator.cpp
-  moduleinfoparser.cpp
-  module_win32.cpp
-  moduleinfotool.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\bin\Debug\moduleinfotool.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+﻿  moduleinfotool.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\bin\Debug\moduleinfotool.exe

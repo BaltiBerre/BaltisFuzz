@@ -1,11 +1,1 @@
-﻿  Building Custom Rule C:/Users/OooO/Documents/Wooster/CS200/VST_SDK/vst3sdk/public.sdk/CMakeLists.txt
-  connectionproxy.cpp
-  eventlist.cpp
-  hostclasses.cpp
-  module.cpp
-  parameterchanges.cpp
-  pluginterfacesupport.cpp
-  processdata.cpp
-  stringconvert.cpp
-  vstinitiids.cpp
-  sdk_hosting.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\sdk_hosting.lib
+﻿  sdk_hosting.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\sdk_hosting.lib

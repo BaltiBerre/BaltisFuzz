@@ -1,10 +1,1 @@
-﻿  Building Custom Rule C:/Users/OooO/Documents/Wooster/CS200/VST_SDK/vst3sdk/public.sdk/CMakeLists.txt
-  commoniids.cpp
-  openurl.cpp
-  systemclipboard_linux.cpp
-  systemclipboard_win32.cpp
-  threadchecker_linux.cpp
-  threadchecker_win32.cpp
-  readfile.cpp
-  vstpresetfile.cpp
-  sdk_common.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\sdk_common.lib
+﻿  sdk_common.vcxproj -> C:\Users\OooO\Documents\Wooster\CS200\Project\BaltiReverb\build\lib\Debug\sdk_common.lib

@@ -1,6 +1,5 @@
-//params.h
 #pragma once
-
+// params.h
 enum {
 	kFuzzId = 0,
 	kDriveId = 1,
@@ -9,5 +8,8 @@ enum {
 	kToneId = 4,
 	kBitDepthId = 5,
 	kSampleRateId = 6,
-	kGlitchId = 8
+	kGlitchId = 8,
+	kClipThresholdId = 9,
+	kLimiterThresholdId = 10,
+	kOutputGainId = 11,
 };
