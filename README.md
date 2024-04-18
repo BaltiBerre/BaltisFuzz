@@ -43,6 +43,7 @@ The code follows the VST3 SDK architecture and utilizes VSTGUI for the plugin's 
 ## Dependencies
 - **VST3 SDK:** The plugin is built using the VST3 SDK, which provides the necessary frameworks and libraries for developing VST3 plugins.
 - **VSTGUI:** The plugin uses VSTGUI for creating the user interface elements.
+- **BaltiReverb:** While not reverb when the bitdepth parameter is close to zero it has a high propensity to it.
 
 ## License
 This project is licensed under the [license].
