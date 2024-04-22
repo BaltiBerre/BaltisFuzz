@@ -1,60 +1,50 @@
-# BaltiFuzz VST3 Plugin
+# SolUru VST3 Plugin
 
-BaltiFuzz is a VST3 audio effect plugin that combines distortion, bitcrushing, and mixing effects to create unique and gritty sounds. It offers a range of parameters to shape the sound, including fuzz, drive, output gain, mix, tone, bit depth, and sample rate.
+SolUru is a VST3 audio effect plugin that provides a versatile fuzz and bitcrushing effect. It allows you to apply fuzz, drive, bit depth reduction, and gain to your audio signal, creating unique and gritty tones.
 
 ## Features
-
-- **Fuzz effect** with adjustable intensity
-- **Drive control** for adding saturation and distortion
-- **Output gain** to control the overall volume
-- **Mix knob** to blend the processed and dry signals
-- **Tone control** to shape the frequency response
-- **Bit depth reduction** for lo-fi and bitcrushed sounds
-- **Sample rate reduction** for unique aliasing effects
-- **Soft clipping** with adjustable threshold and clipping curve
-- **Stereo processing** for wide and immersive sounds
-
-## Parameters
-
-- **Fuzz**: Controls the amount of fuzz applied to the signal (0.0 to 1.0)
-- **Drive**: Adjusts the drive level for saturation and distortion (0.0 to 1.0)
-- **Output**: Sets the overall output gain of the plugin (0.0 to 1.0)
-- **Mix**: Blends between the dry and processed signals (0.0 to 1.0)
-- **Tone**: Shapes the frequency response of the effect (0.0 to 1.0)
-- **BitDepth**: Reduces the bit depth of the signal for lo-fi effects (0.0 to 1.0)
-- **SampleRate**: Reduces the sample rate for unique aliasing sounds (0.0 to 1.0)
-- **Glitch**: Reserved for future use (currently non-functional)
+- **Fuzz:** Adjust the amount of fuzz applied to the signal.
+- **Drive:** Control the amount of drive or distortion.
+- **Output:** Set the output level of the processed signal.
+- **Mix:** Blend between the dry (unprocessed) and wet (processed) signals.
+- **Bit Depth:** Reduce the bit depth of the signal for a lo-fi, bitcrushed effect.
+- **Gain:** Adjust the overall output gain of the plugin.
 
 ## Installation
-
-1. Download the BaltiReverb VST3 plugin package.
-2. Copy the `BaltiReverb.vst3` file to your VST3 plugin directory.
-   - On Windows: `C:\Program Files\Common Files\VST3`
-   - On macOS: `/Library/Audio/Plug-Ins/VST3`
-3. Launch your VST3-compatible digital audio workstation (DAW).
-4. Scan for new plugins or refresh the plugin list in your DAW.
-5. BaltiReverb should now be available for use in your projects.
+1. Clone the repository or download the source code.
+2. Make sure you have the VST3 SDK installed and the path to the SDK is correctly set in the CMakeLists.txt file.
+3. Open the project in your preferred C++ IDE.
+4. Build the project to generate the VST3 plugin binary.
+5. Copy the generated VST3 plugin file to your system's VST3 plugin directory.
 
 ## Usage
+1. Open your VST3-compatible digital audio workstation (DAW).
+2. Create a new track or select an existing track where you want to use the SolUru plugin.
+3. Load the SolUru VST3 plugin on the track.
+4. Adjust the plugin parameters to achieve the desired fuzz and bitcrushing effect:
+   - **Fuzz:** Increase the fuzz amount to add more distortion and grit to the signal.
+   - **Drive:** Increase the drive to add more saturation and distortion.
+   - **Output:** Adjust the output level to control the overall volume of the processed signal.
+   - **Mix:** Blend between the dry and wet signals to balance the amount of the effect.
+   - **Bit Depth:** Lower the bit depth to introduce quantization noise and create a lo-fi sound.
+   - **Gain:** Adjust the overall output gain to compensate for any volume changes introduced by the effect.
+5. Experiment with different parameter settings to create unique and interesting tones.
 
-1. Open your DAW and create a new project or open an existing one.
-2. Insert BaltiReverb on an audio track or bus.
-3. Adjust the parameters to achieve the desired sound.
-4. Experiment with different combinations of fuzz, drive, tone, bit depth, and sample rate.
-5. Use the mix control to blend the processed signal with the dry signal.
-6. Adjust the output gain to maintain a consistent volume level.
-7. Automate the parameters for creative effects and transitions.
-8. Render or bounce the processed audio as needed.
+## Code Structure
+The SolUru plugin consists of the following main files:
+- **mypluginprocessor.h** and **mypluginprocessor.cpp:** Contain the audio processing logic for the plugin.
+- **myplugincontroller.h** and **myplugincontroller.cpp:** Implement the plugin's parameter handling and user interface.
+- **myplugincids.h:** Defines the unique identifiers for the plugin.
+- **mypluginentry.cpp:** Entry point for the VST3 plugin.
+- **version.h:** Contains version information for the plugin.
+- **CMakeLists.txt:** CMake build configuration file.
+The code follows the VST3 SDK architecture and utilizes VSTGUI for the plugin's user interface.
 
-## System Requirements
+## Dependencies
+- **VST3 SDK:** The plugin is built using the VST3 SDK, which provides the necessary frameworks and libraries for developing VST3 plugins.
+- **VSTGUI:** The plugin uses VSTGUI for creating the user interface elements.
+- **BaltiReverb:** While not reverb when the bitdepth parameter is close to zero it has a high propensity to it.
 
-- Windows 7 or later (64-bit) or macOS 10.9 or later
-- VST3-compatible host application (DAW)
-
-## Credits
-
-BaltiReverb is developed by Baltisreverb.
-
-Copyright © 2024 Baltisreverb. All rights reserved.
-
-VST is a trademark of Steinberg Media Technologies GmbH.
+## License
+This project is licensed under the [license].
+![image](https://github.com/BaltiBerre/BaltisFuzz/assets/119361606/7a98f532-7f0f-4ced-8071-a2a0fb383f0b)

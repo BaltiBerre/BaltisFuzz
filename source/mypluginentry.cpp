@@ -6,7 +6,6 @@
 #include "myplugincontroller.h"
 #include "myplugincids.h"
 #include "version.h"
-
 #include "public.sdk/source/main/pluginfactory.h"
 
 #define stringPluginName "BaltiReverb"
@@ -15,36 +14,36 @@ using namespace Steinberg::Vst;
 using namespace MyCompanyName;
 
 //------------------------------------------------------------------------
-//  VST Plug-in Entry
+// VST Plug-in Entry
 //------------------------------------------------------------------------
 
-BEGIN_FACTORY_DEF ("Baltisreverb", 
-			       "baltisreverb", 
-			       "mailto:baltisreverb")
+// Define the factory for the plugin
+BEGIN_FACTORY_DEF("Baltisreverb", "baltisreverb", "mailto:baltisreverb")
 
-	//---First Plug-in included in this factory-------
-	// its kVstAudioEffectClass component
-	DEF_CLASS2 (INLINE_UID_FROM_FUID(kBaltiReverbProcessorUID),
-				PClassInfo::kManyInstances,	// cardinality
-				kVstAudioEffectClass,	// the component category (do not changed this)
-				stringPluginName,		// here the Plug-in name (to be changed)
-				Vst::kDistributable,	// means that component and controller could be distributed on different computers
-				BaltiReverbVST3Category, // Subcategory for this Plug-in (to be changed)
-				FULL_VERSION_STR,		// Plug-in version (to be changed)
-				kVstVersionString,		// the VST 3 SDK version (do not changed this, use always this define)
-				BaltiReverbProcessor::createInstance)	// function pointer called when this component should be instantiated
+//---First Plug-in included in this factory-------
 
-	// its kVstComponentControllerClass component
-	DEF_CLASS2 (INLINE_UID_FROM_FUID (kBaltiReverbControllerUID),
-				PClassInfo::kManyInstances, // cardinality
-				kVstComponentControllerClass,// the Controller category (do not changed this)
-				stringPluginName "Controller",	// controller name (could be the same than component name)
-				0,						// not used here
-				"",						// not used here
-				FULL_VERSION_STR,		// Plug-in version (to be changed)
-				kVstVersionString,		// the VST 3 SDK version (do not changed this, use always this define)
-				BaltiReverbController::createInstance)// function pointer called when this component should be instantiated
+// Define the audio effect processor component
+DEF_CLASS2(INLINE_UID_FROM_FUID(kBaltiReverbProcessorUID),
+           PClassInfo::kManyInstances, // Cardinality (allows multiple instances)
+           kVstAudioEffectClass, // Component category (audio effect)
+           stringPluginName, // Plugin name
+           Vst::kDistributable, // Distributable (component and controller can be on different computers)
+           BaltiReverbVST3Category, // Plugin subcategory
+           FULL_VERSION_STR, // Plugin version
+           kVstVersionString, // VST 3 SDK version
+           BaltiReverbProcessor::createInstance) // Function to create an instance of the processor
 
-	//----for others Plug-ins contained in this factory, put like for the first Plug-in different DEF_CLASS2---
+// Define the controller component
+DEF_CLASS2(INLINE_UID_FROM_FUID(kBaltiReverbControllerUID),
+           PClassInfo::kManyInstances, // Cardinality (allows multiple instances)
+           kVstComponentControllerClass, // Component category (controller)
+           stringPluginName "Controller", // Controller name
+           0, // Not used
+           "", // Not used
+           FULL_VERSION_STR, // Plugin version
+           kVstVersionString, // VST 3 SDK version
+           BaltiReverbController::createInstance) // Function to create an instance of the controller
+
+//----for others Plug-ins contained in this factory, put like for the first Plug-in different DEF_CLASS2---
 
 END_FACTORY

@@ -9,10 +9,11 @@
 #include "pluginterfaces/vst/ivstparameterchanges.h"
 #include <vstgui/lib/cgraphicstransform.h>
 
-
-
+// Using namespace Steinberg and std for convenience
 using namespace Steinberg;
 using namespace std;
+
+// Table for bit depth gain values
 const float kBitDepthGainTable[] = {
     0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f
 };
@@ -20,12 +21,13 @@ const int kBitDepthGainTableSize = sizeof(kBitDepthGainTable) / sizeof(float);
 
 namespace MyCompanyName {
 
+    // Function to calculate the limiter threshold based on bit depth
     float BaltiReverbProcessor::calculateLimiterThreshold(float bitDepth) {
         return 0.1f + bitDepth * 0.9f;
     }
 
     //------------------------------------------------------------------------
-    // BaltiFuzzProcessor
+    // BaltiReverbProcessor
     //------------------------------------------------------------------------
     BaltiReverbProcessor::BaltiReverbProcessor()
     {
@@ -94,22 +96,22 @@ namespace MyCompanyName {
                         switch (paramQueue->getParameterId())
                         {
                         case kFuzzId:
-                            fFuzz = (float)value;
+                            fFuzz = (float)value; // Update fFuzz parameter value
                             break;
                         case kDriveId:
-                            fDrive = (float)value;
+                            fDrive = (float)value; // Update fDrive parameter value
                             break;
                         case kOutputId:
-                            fOutput = (float)value;
+                            fOutput = (float)value; // Update fOutput parameter value
                             break;
                         case kMixId:
-                            fMix = (float)value;
+                            fMix = (float)value; // Update fMix parameter value
                             break;
                         case kOutputGainId:
-                            fGain = (float)value;
+                            fGain = (float)value; // Update fGain parameter value
                             break;
                         case kBitDepthId:
-                            fBitDepth = (float)value;
+                            fBitDepth = (float)value; // Update fBitDepth parameter value
                             break;
                         }
                     }
@@ -118,19 +120,17 @@ namespace MyCompanyName {
         }
 
         float b0 = 0.0f, b1 = 0.0f, a1 = 0.0f;
-        
-
 
         //--- Here you have to implement your processing
         if (data.numInputs == 0 || data.numOutputs == 0) {
-            return kResultOk;
+            return kResultOk; // No inputs or outputs, so return
         }
 
         int32 numChannels = data.inputs[0].numChannels;
         Vst::Sample32** in = data.inputs[0].channelBuffers32;
         Vst::Sample32** out = data.outputs[0].channelBuffers32;
 
-
+        // Process each channel
         for (int32 ch = 0; ch < numChannels; ch++)
         {
             Vst::Sample32* pIn = in[ch];
@@ -139,8 +139,8 @@ namespace MyCompanyName {
 
             float x1 = 0.0f, y1 = 0.0f;
             for (int32 i = 0; i < data.numSamples; i++) {
-                tmp = *pIn * (1.0f + fDrive * 10.0f);
-                tmp = tanh(tmp * (1.0f + fFuzz * 5.0f));
+                tmp = *pIn * (1.0f + fDrive * 10.0f); // Apply drive
+                tmp = tanh(tmp * (1.0f + fFuzz * 5.0f)); // Apply fuzz (tanh waveshaping)
 
                 // Apply soft clipping with adjusted threshold and clipping curve
                 float threshold = 0.7;
@@ -152,9 +152,9 @@ namespace MyCompanyName {
                 }
 
                 // Apply bitcrusher effect
-                float bitDepth = pow(2.0f, fBitDepth * 16.0f);
-                float limiterThreshold = calculateLimiterThreshold(fBitDepth);
-                float crushedSample = floor(tmp * bitDepth) / bitDepth;
+                float bitDepth = pow(2.0f, fBitDepth * 16.0f); // Calculate bit depth value
+                float limiterThreshold = calculateLimiterThreshold(fBitDepth); // Calculate limiter threshold
+                float crushedSample = floor(tmp * bitDepth) / bitDepth; // Apply bitcrushing
 
                 // Apply limiter
                 if (crushedSample > limiterThreshold) {
@@ -164,29 +164,25 @@ namespace MyCompanyName {
                     crushedSample = -limiterThreshold + (crushedSample + limiterThreshold) / (bitDepth - limiterThreshold + 1.0f);
                 }
 
-                
+                // Mix the original and processed signal based on fMix parameter
                 tmp = ((*pIn * (1.0f - fMix)) + (crushedSample * fMix) * fOutput);
-                tmp *= fGain;
-                *pOut = tmp;
+                tmp *= fGain; // Apply output gain
+                *pOut = tmp; // Store the processed sample in the output buffer
 
                 pIn++;
                 pOut++;
             }
         }
 
-
         return kResultOk;
     }
-
-
-
 
     //------------------------------------------------------------------------
     tresult PLUGIN_API BaltiReverbProcessor::setupProcessing(Vst::ProcessSetup& newSetup)
     {
         //--- called before any processing ----
 
-        sampleRate = newSetup.sampleRate;
+        sampleRate = newSetup.sampleRate; // Store the sample rate
         return AudioEffect::setupProcessing(newSetup);
     }
 
@@ -204,9 +200,6 @@ namespace MyCompanyName {
         return kResultFalse;
     }
 
-
-
-
     //------------------------------------------------------------------------
     tresult PLUGIN_API BaltiReverbProcessor::setState(IBStream* state)
     {
@@ -218,34 +211,32 @@ namespace MyCompanyName {
         float savedFuzz = 0.0f;
         if (streamer.readFloat(savedFuzz) == false)
             return kResultFalse;
-        fFuzz = savedFuzz;
+        fFuzz = savedFuzz; // Load fFuzz parameter value from preset
 
         float savedDrive = 0.0f;
         if (streamer.readFloat(savedDrive) == false)
             return kResultFalse;
-        fDrive = savedDrive;
+        fDrive = savedDrive; // Load fDrive parameter value from preset
 
         float savedOutput = 0.0f;
         if (streamer.readFloat(savedOutput) == false)
             return kResultFalse;
-        fOutput = savedOutput;
+        fOutput = savedOutput; // Load fOutput parameter value from preset
 
         float savedMix = 0.0f;
         if (streamer.readFloat(savedMix) == false)
             return kResultFalse;
-        fMix = savedMix;
+        fMix = savedMix; // Load fMix parameter value from preset
 
         float savedGain = 0.0f;
         if (streamer.readFloat(savedGain) == false)
             return kResultFalse;
-        fGain = savedGain;
+        fGain = savedGain; // Load fGain parameter value from preset
 
         float savedBitDepth = 0.0f;
         if (streamer.readFloat(savedBitDepth) == false)
             return kResultFalse;
-        fBitDepth = savedBitDepth;
-
-
+        fBitDepth = savedBitDepth; // Load fBitDepth parameter value from preset
 
         return kResultOk;
     }
@@ -253,20 +244,17 @@ namespace MyCompanyName {
     //------------------------------------------------------------------------
     tresult PLUGIN_API BaltiReverbProcessor::getState(IBStream* state)
     {   
-
         // Save the model of your plug-in
         IBStreamer streamer(state, kLittleEndian);
-        streamer.writeFloat(fFuzz);
-        streamer.writeFloat(fDrive);
-        streamer.writeFloat(fOutput);
-        streamer.writeFloat(fMix);
-  
-        streamer.writeFloat(fBitDepth);
-        streamer.writeFloat(fGain);
-
+        streamer.writeFloat(fFuzz); // Save fFuzz parameter value
+        streamer.writeFloat(fDrive); // Save fDrive parameter value
+        streamer.writeFloat(fOutput); // Save fOutput parameter value
+        streamer.writeFloat(fMix); // Save fMix parameter value
+        streamer.writeFloat(fBitDepth); // Save fBitDepth parameter value
+        streamer.writeFloat(fGain); // Save fGain parameter value
 
         return kResultOk;
     }
 
     //------------------------------------------------------------------------
-} // namespace BaltiFuzz
+} // namespace MyCompanyName
